@@ -1,0 +1,29 @@
+li {
+  list-style: none;
+}
+.menu__list {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.menu__list-item {
+  margin-right: 20px;
+  position: relative;
+}
+.menu__link {
+  font-size: 30px;
+  color: #000000;
+  text-decoration: none;
+}
+.menu__dropdown {
+  display: none;
+  position: absolute;
+  background-color: #123213;
+  text-align: center;
+}
+.menu__dropdown-link {
+  color: #ffff;
+}
+.appear {
+    display: block;
+}
