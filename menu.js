@@ -3,6 +3,7 @@
 let link = document.querySelectorAll(".menu__link--click");
 let appear = "appear";
 
+//Functions
 link.forEach(function (button) {
   let dropdown = button.nextElementSibling;
   button.addEventListener("click", function () {
