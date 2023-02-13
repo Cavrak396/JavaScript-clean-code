@@ -30,15 +30,9 @@ let menu = document.querySelectorAll(".menu__item");
 
 menu.forEach((item) => {
 item.style.display = "none";
+if (item.classList.contains(data)) {
+  item.style.display = "block";
+}
 });
-
-menu.forEach((item) => {
-  if (item.classList.contains(data)) {
-    item.style.display = "block";
-  }
-})
-
 });
-
-
 });
