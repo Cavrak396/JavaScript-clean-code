@@ -20,29 +20,25 @@ const portfolioSort = (button) => {
 };
 
 
+const knobs = document.querySelectorAll(".button");
 
-const dugmad = document.querySelectorAll(".button");
+knobs.forEach((button) => {
+button.addEventListener("click", () => {
 
-dugmad.forEach((button) => {
-    let data = button.getAttribute("data-category");
-    button.addEventListener("click", () => {
-     
-    let items = document.querySelectorAll(".menu__item");
-    
-    items.forEach((item) => {
-        item.style.display ="none";
-    })
+let data = button.classList[1];
+let menu = document.querySelectorAll(".menu__item");
 
-     items.forEach((item) => {
-        if(item.getAttribute("data-category").includes(data)) {
-            item.style.display ="block";
-        }
-     })
-    
-  
+menu.forEach((item) => {
+item.style.display = "none";
+});
 
-
-
-
-    })
+menu.forEach((item) => {
+  if (item.classList.contains(data)) {
+    item.style.display = "block";
+  }
 })
+
+});
+
+
+});
