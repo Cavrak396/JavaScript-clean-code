@@ -1,27 +1,26 @@
-
 let slider = document.querySelector(".portfolio__slider");
 let prevBtn = document.querySelector(".portfolio__prev-button");
 let nextBtn = document.querySelector(".portfolio__next-button");
 let sliderCards = document.querySelectorAll(".portfolio__slider-card");
 
-
 let currentPos = 0;
 
 let moveleft = () => {
-    if(currentPos === 0) return;
-    currentPos --;
-    slider.style.transform = `translateX(-${currentPos * 21}%)`;
-}
+  if (currentPos === 0) return;
+  currentPos--;
+  let cardWidth = sliderCards[currentPos].offsetWidth;
+  slider.style.transform = `translateX(-${currentPos * cardWidth}px)`;
+};
 
 let moveRight = () => {
-    if(currentPos === sliderCards.length - 1) return;
-    currentPos ++;
-    slider.style.transform = `translateX(-${currentPos * 21}%)`;
-}
+  if (currentPos === sliderCards.length - 1) return;
+  currentPos++;
+  let cardWidth = sliderCards[currentPos].offsetWidth;
+  slider.style.transform = `translateX(-${currentPos * cardWidth}px)`;
+};
 
 prevBtn.addEventListener("click", moveleft);
 nextBtn.addEventListener("click", moveRight);
-
 
 //Classic slider
 
@@ -33,19 +32,19 @@ let counter = 0;
 sliderImg[counter].style.display = "block";
 
 rightButton.addEventListener("click", () => {
-    sliderImg[counter].style.display = "none";
-    counter++;
-    if(counter > sliderImg.length - 1) {
-        counter = 0;
-    }
-    sliderImg[counter].style.display = "block";
+  sliderImg[counter].style.display = "none";
+  counter++;
+  if (counter > sliderImg.length - 1) {
+    counter = 0;
+  }
+  sliderImg[counter].style.display = "block";
 });
 
 leftButton.addEventListener("click", () => {
-    sliderImg[counter].style.display = "none";
-    counter--;
-    if(counter < 0) {
-        counter = sliderImg.length - 1;
-    }
-    sliderImg[counter].style.display = "block";
+  sliderImg[counter].style.display = "none";
+  counter--;
+  if (counter < 0) {
+    counter = sliderImg.length - 1;
+  }
+  sliderImg[counter].style.display = "block";
 });

@@ -19,20 +19,23 @@ const portfolioSort = (button) => {
   });
 };
 
-
 const knobs = document.querySelectorAll(".button");
 
 knobs.forEach((button) => {
-button.addEventListener("click", () => {
+  button.addEventListener("click", () => {
+    let data = button.classList[1];
+    let menu = document.querySelectorAll(".menu__item");
 
-let data = button.classList[1];
-let menu = document.querySelectorAll(".menu__item");
+    menu.forEach((item) => {
+      item.style.display = "none";
+      if (item.classList.contains(data)) {
+        item.style.display = "block";
+      }
+    });
+  });
+});
 
-menu.forEach((item) => {
-item.style.display = "none";
-if (item.classList.contains(data)) {
-  item.style.display = "block";
-}
-});
-});
-});
+
+
+
+
